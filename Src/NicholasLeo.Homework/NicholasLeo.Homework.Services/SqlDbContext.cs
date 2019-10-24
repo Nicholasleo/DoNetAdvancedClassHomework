@@ -136,7 +136,7 @@ namespace NicholasLeo.Homework.Services
             return resultMsg;
         }
 
-        public T Query<T>(int id) where T : BaseModel
+        public T GetEntity<T>(int id) where T : BaseModel
         {
             try
             {
@@ -163,7 +163,7 @@ namespace NicholasLeo.Homework.Services
             }
         }
 
-        public List<T> QueryAll<T>() where T : BaseModel
+        public List<T> GetLists<T>() where T : BaseModel
         {
             try
             {

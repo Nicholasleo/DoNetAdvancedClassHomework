@@ -31,7 +31,7 @@ namespace NicholasLeo.Homework.Interfaces
         ResultMsg Update<T>(T t) where T : BaseModel;
         ResultMsg Delete<T>(T t) where T : BaseModel;
         ResultMsg Delete<T>(int id) where T : BaseModel;
-        T Query<T>(int id) where T : BaseModel;
-        List<T> QueryAll<T>() where T : BaseModel;
+        T GetEntity<T>(int id) where T : BaseModel;
+        List<T> GetLists<T>() where T : BaseModel;
     }
 }

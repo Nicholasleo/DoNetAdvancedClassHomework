@@ -25,6 +25,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
+using NicholasLeo.Homework.Commond;
 using NicholasLeo.Homework.Interfaces;
 using NicholasLeo.Homework.Models;
 
@@ -43,15 +44,10 @@ namespace NicholasLeo.Homework.Services
             {
                 Type type = typeof(T);
                 object obj = Activator.CreateInstance(type);
-                string fields = string.Join(",", type.GetProperties().Where(p => p.Name.Equals("Id")).Select(s => $"[{s.Name}]"));
-                string values = string.Join(",", type.GetProperties().Where(p => !p.Name.Equals("Id")).Select(s => $"@[{s.Name}]"));
-                string sql = $"Insert [{type.Name}] ({fields}) values({values})";
-                var parameters = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly)
-                    .Select(item => new SqlParameter()
-                    {
-                        ParameterName = $"@{item.Name}",
-                        SqlValue = $"{item.GetValue(t)}"
-                    });
+                string fields = string.Join(",", type.GetProperties().Where(f => !f.Name.Equals("Id")).Select(f => $"[{f.Name}]"));
+                string values = string.Join(",", type.GetProperties().Where(f => !f.Name.Equals("Id")).Select(f => $"@[{f.Name}]"));
+                string sql = $"INSERT INTO [{CustomerAttributeHelper.GetTableName(type)}]({fields}) VALUES({values})";
+                var parameters = type.GetProperties().Where(f=>!f.Name.Equals("Id")).Select(item => new SqlParameter($"@{item.Name}",$"{item.GetValue(t)}"));
                 if (_IDbHelper.ExecuteNonQuery(sql, parameters.ToArray()) > 0)
                 {
                     resultMsg.Status = 200;
@@ -73,7 +69,7 @@ namespace NicholasLeo.Homework.Services
             {
                 Type type = typeof(T);
                 object obj = Activator.CreateInstance(type);
-                string sql = $"update [{type.Name}]  set {string.Join(",", type.GetProperties().Where(f => !f.Name.Equals("Id")).Select(f => $"[{f.Name}]=@ {f.Name}"))}  where Id =@Id";
+                string sql = $"UPDATE [{CustomerAttributeHelper.GetTableName(type)}]  SET {string.Join(",", type.GetProperties().Where(f => !f.Name.Equals("Id")).Select(f => $"[{f.Name}]=@ {f.Name}"))}  WHERE Id =@Id";
                 var parameters = type.GetProperties().Select(item => new SqlParameter()
                 {
                     ParameterName = $"@{item.Name}",
@@ -99,7 +95,7 @@ namespace NicholasLeo.Homework.Services
             try
             {
                 Type type = t.GetType();
-                string sql = $"Delete from [{type.Name}] where Id=@Id";
+                string sql = $"DELETE FROM [{CustomerAttributeHelper.GetTableName(type)}] WHERE Id=@Id";
                 if (_IDbHelper.ExecuteNonQuery(sql, new SqlParameter("@Id", t.Id)) > 0)
                 {
                     resultMsg.Status = 200;
@@ -121,7 +117,7 @@ namespace NicholasLeo.Homework.Services
             try
             {
                 Type type = typeof(T);
-                string sql = $"Delete from [{type.Name}] where Id=@Id";
+                string sql = $"DELETE FROM [{CustomerAttributeHelper.GetTableName(type)}] WHERE Id=@Id";
                 if (_IDbHelper.ExecuteNonQuery(sql, new SqlParameter("@Id", id)) > 0)
                 {
                     resultMsg.Status = 200;
@@ -142,7 +138,7 @@ namespace NicholasLeo.Homework.Services
             {
                 Type type = typeof(T);
                 object data = Activator.CreateInstance(type); 
-                string sql = $"SELECT {string.Join(",", type.GetProperties().Select(f => $"[{f.Name}]")) } FROM [{type.Name}] where Id=@Id";
+                string sql = $"SELECT {string.Join(",", type.GetProperties().Select(f => $"[{f.Name}]")) } FROM [{CustomerAttributeHelper.GetTableName(type)}] where Id=@Id";
                 SqlDataReader dataReader = _IDbHelper.ExecuteReader(sql, new SqlParameter("@Id", id));
                 if (dataReader.Read())
                 {
@@ -169,7 +165,7 @@ namespace NicholasLeo.Homework.Services
             {
                 List<T> result = new List<T>();
                 Type type = typeof(T);
-                string sql = $"SELECT {string.Join(",", type.GetProperties().Select(a => $"[{a.Name}]")) } FROM [{type.Name}]";
+                string sql = $"SELECT {string.Join(",", type.GetProperties().Select(a => $"[{a.Name}]")) } FROM [{CustomerAttributeHelper.GetTableName(type)}]";
                 SqlDataReader dataReader = _IDbHelper.ExecuteReader(sql);
                 while (dataReader.Read())
                 {

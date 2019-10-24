@@ -20,14 +20,12 @@
 *******************************************************************
 //----------------------------------------------------------------*/
 #endregion
+using NicholasLeo.Homework.Commond;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NicholasLeo.Homework.Models
 {
+    [CustomerAttribute(TableName = "User")]
     public class UserModel : BaseInfoModel
     {
         public string Account { get; set; }

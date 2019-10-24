@@ -49,5 +49,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NicholasLeo.Homework.Interfaces\NicholasLeo.Homework.Interfaces.csproj">
+      <Project>{1F496712-364F-4E04-ACE5-A8FCE9582F44}</Project>
+      <Name>NicholasLeo.Homework.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NicholasLeo.Homework.Models\NicholasLeo.Homework.Models.csproj">
+      <Project>{F206D6BB-394A-4A8B-82CE-4E04C6F6D689}</Project>
+      <Name>NicholasLeo.Homework.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NicholasLeo.Homework.Services\NicholasLeo.Homework.Services.csproj">
+      <Project>{c740971e-be97-4ed5-85d6-e6bfbac40aac}</Project>
+      <Name>NicholasLeo.Homework.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

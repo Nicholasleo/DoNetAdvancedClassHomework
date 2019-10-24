@@ -34,7 +34,7 @@ namespace NicholasLeo.Homework.Services
 {
     public class DbHelper : IDbHelper
     {
-        private readonly static string config = ConfigurationManager.ConnectionStrings["logisDb"].ConnectionString;
+        private readonly static string config = ConfigurationManager.ConnectionStrings["db"].ConnectionString;
         public int ExecuteNonQuery(string sql, params SqlParameter[] par)
         {
             using (SqlConnection con = new SqlConnection(config))

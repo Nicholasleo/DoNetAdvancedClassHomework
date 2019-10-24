@@ -1,8 +1,8 @@
-﻿using System;
+﻿using NicholasLeo.Homework.Interfaces;
+using NicholasLeo.Homework.Models;
+using NicholasLeo.Homework.Services;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NicholasLeo.Homework.ConsoleMain
 {
@@ -10,6 +10,14 @@ namespace NicholasLeo.Homework.ConsoleMain
     {
         static void Main(string[] args)
         {
+            IDbContext _IDbContext = new SqlDbContext();
+            List<CompanyModel> list = _IDbContext.GetLists<CompanyModel>();
+            Console.WriteLine(list.Count);
+            CompanyModel model = new CompanyModel { Name = "腾讯科技", CreateTime = DateTime.Now.Date, CreatorId = 1 ,LastModifierId=1,LastModifyTime=DateTime.Now.Date};
+            ResultMsg msg = _IDbContext.Add<CompanyModel>(model);
+            Console.WriteLine(msg.Status);
+            Console.WriteLine(msg.Message);
+            Console.ReadKey();
         }
     }
 }

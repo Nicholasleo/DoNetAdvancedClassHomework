@@ -47,6 +47,10 @@
     <Compile Include="SqlDbContext.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NicholasLeo.Homework.Commond\NicholasLeo.Homework.Common.csproj">
+      <Project>{D0E5AF96-C2F0-4823-8E29-A39E7EF1BF68}</Project>
+      <Name>NicholasLeo.Homework.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NicholasLeo.Homework.Interfaces\NicholasLeo.Homework.Interfaces.csproj">
       <Project>{1F496712-364F-4E04-ACE5-A8FCE9582F44}</Project>
       <Name>NicholasLeo.Homework.Interfaces</Name>

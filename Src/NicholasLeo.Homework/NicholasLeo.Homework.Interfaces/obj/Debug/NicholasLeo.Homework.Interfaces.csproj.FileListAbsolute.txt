@@ -6,3 +6,5 @@ F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homewor
 F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Interfaces\obj\Debug\NicholasLeo.Homework.Interfaces.csproj.CopyComplete
 F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Interfaces\obj\Debug\NicholasLeo.Homework.Interfaces.dll
 F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Interfaces\obj\Debug\NicholasLeo.Homework.Interfaces.pdb
+F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Interfaces\bin\Debug\NicholasLeo.Homework.Commond.dll
+F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Interfaces\bin\Debug\NicholasLeo.Homework.Commond.pdb

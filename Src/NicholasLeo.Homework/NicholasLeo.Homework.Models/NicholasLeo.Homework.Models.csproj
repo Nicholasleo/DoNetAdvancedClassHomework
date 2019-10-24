@@ -48,5 +48,11 @@
     <Compile Include="ResultMsg.cs" />
     <Compile Include="UserModel.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NicholasLeo.Homework.Commond\NicholasLeo.Homework.Common.csproj">
+      <Project>{D0E5AF96-C2F0-4823-8E29-A39E7EF1BF68}</Project>
+      <Name>NicholasLeo.Homework.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

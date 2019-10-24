@@ -8,3 +8,5 @@ F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homewor
 F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Services\obj\Debug\NicholasLeo.Homework.Services.csproj.CopyComplete
 F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Services\obj\Debug\NicholasLeo.Homework.Services.dll
 F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Services\obj\Debug\NicholasLeo.Homework.Services.pdb
+F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Services\bin\Debug\NicholasLeo.Homework.Commond.dll
+F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Services\bin\Debug\NicholasLeo.Homework.Commond.pdb

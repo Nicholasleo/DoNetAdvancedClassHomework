@@ -1,0 +1,5 @@
+F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.ConsoleMain\bin\Debug\NicholasLeo.Homework.ConsoleMain.exe.config
+F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.ConsoleMain\bin\Debug\NicholasLeo.Homework.ConsoleMain.exe
+F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.ConsoleMain\bin\Debug\NicholasLeo.Homework.ConsoleMain.pdb
+F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.ConsoleMain\obj\Debug\NicholasLeo.Homework.ConsoleMain.exe
+F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.ConsoleMain\obj\Debug\NicholasLeo.Homework.ConsoleMain.pdb

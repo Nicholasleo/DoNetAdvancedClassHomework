@@ -1,5 +1,0 @@
-F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Commond\bin\Debug\NicholasLeo.Homework.Commond.dll
-F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Commond\bin\Debug\NicholasLeo.Homework.Commond.pdb
-F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Commond\obj\Debug\NicholasLeo.Homework.Commond.csprojAssemblyReference.cache
-F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Commond\obj\Debug\NicholasLeo.Homework.Commond.dll
-F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Commond\obj\Debug\NicholasLeo.Homework.Commond.pdb

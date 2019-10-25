@@ -1,8 +1,0 @@
-F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Models\bin\Debug\NicholasLeo.Homework.Models.dll
-F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Models\bin\Debug\NicholasLeo.Homework.Models.pdb
-F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Models\obj\Debug\NicholasLeo.Homework.Models.dll
-F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Models\obj\Debug\NicholasLeo.Homework.Models.pdb
-F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Models\obj\Debug\NicholasLeo.Homework.Models.csprojAssemblyReference.cache
-F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Models\bin\Debug\NicholasLeo.Homework.Commond.dll
-F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Models\bin\Debug\NicholasLeo.Homework.Commond.pdb
-F:\Work\GitHubProject\ruanmou\DoNetAdvancedClassHomework\Src\NicholasLeo.Homework\NicholasLeo.Homework.Models\obj\Debug\NicholasLeo.Homework.Models.csproj.CopyComplete

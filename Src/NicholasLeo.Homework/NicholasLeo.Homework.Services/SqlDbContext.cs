@@ -45,7 +45,7 @@ namespace NicholasLeo.Homework.Services
                 Type type = typeof(T);
                 object obj = Activator.CreateInstance(type);
                 string fields = string.Join(",", type.GetProperties().Where(f => !f.Name.Equals("Id")).Select(f => $"[{f.Name}]"));
-                string values = string.Join(",", type.GetProperties().Where(f => !f.Name.Equals("Id")).Select(f => $"@[{f.Name}]"));
+                string values = string.Join(",", type.GetProperties().Where(f => !f.Name.Equals("Id")).Select(f => $"@{f.Name}"));
                 string sql = $"INSERT INTO [{CustomerAttributeHelper.GetTableName(type)}]({fields}) VALUES({values})";
                 var parameters = type.GetProperties().Where(f=>!f.Name.Equals("Id")).Select(item => new SqlParameter($"@{item.Name}",$"{item.GetValue(t)}"));
                 if (_IDbHelper.ExecuteNonQuery(sql, parameters.ToArray()) > 0)
@@ -69,7 +69,7 @@ namespace NicholasLeo.Homework.Services
             {
                 Type type = typeof(T);
                 object obj = Activator.CreateInstance(type);
-                string sql = $"UPDATE [{CustomerAttributeHelper.GetTableName(type)}]  SET {string.Join(",", type.GetProperties().Where(f => !f.Name.Equals("Id")).Select(f => $"[{f.Name}]=@ {f.Name}"))}  WHERE Id =@Id";
+                string sql = $"UPDATE [{CustomerAttributeHelper.GetTableName(type)}]  SET {string.Join(",", type.GetProperties().Where(f => !f.Name.Equals("Id")).Select(f => $"[{f.Name}]=@{f.Name}"))}  WHERE Id =@Id";
                 var parameters = type.GetProperties().Select(item => new SqlParameter()
                 {
                     ParameterName = $"@{item.Name}",

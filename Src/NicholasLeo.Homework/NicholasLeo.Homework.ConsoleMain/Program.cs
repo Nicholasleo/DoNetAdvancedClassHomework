@@ -17,6 +17,11 @@ namespace NicholasLeo.Homework.ConsoleMain
             ResultMsg msg = _IDbContext.Add<CompanyModel>(model);
             Console.WriteLine(msg.Status);
             Console.WriteLine(msg.Message);
+            model = _IDbContext.GetEntity<CompanyModel>(1);
+            model.Name = "测试";
+            msg = _IDbContext.Update<CompanyModel>(model);
+            Console.WriteLine(msg.Status);
+            Console.WriteLine(msg.Message);
             Console.ReadKey();
         }
     }

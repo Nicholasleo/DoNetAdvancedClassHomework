@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NicholasLeo.Homework.Servic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NicholasLeo.Homework.ConsoleMain", "NicholasLeo.Homework.ConsoleMain\NicholasLeo.Homework.ConsoleMain.csproj", "{FE966C32-AA88-48A1-B729-7B10CA86C906}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NicholasLeo.Homework.Factory", "NicholasLeo.Homework.Factory\NicholasLeo.Homework.Factory.csproj", "{3B986F69-9967-4A3C-890D-79379644952E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{FE966C32-AA88-48A1-B729-7B10CA86C906}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE966C32-AA88-48A1-B729-7B10CA86C906}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE966C32-AA88-48A1-B729-7B10CA86C906}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B986F69-9967-4A3C-890D-79379644952E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B986F69-9967-4A3C-890D-79379644952E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B986F69-9967-4A3C-890D-79379644952E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B986F69-9967-4A3C-890D-79379644952E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

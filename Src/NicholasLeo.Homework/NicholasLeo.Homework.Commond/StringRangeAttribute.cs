@@ -2,18 +2,18 @@
 /*----------------------------------------------------------------
 * 作    者 ：Nicholas Leo 
 *  E-Mail : nicholasleo1030@163.com
-*  GitHub : https://github.com/Nicholasleo/DoNetAdvancedClassHomework
+*  GitHub : https://github.com/nicholasleo
 * 项目名称 ：NicholasLeo.Homework.Commond
 * 项目描述 ：类-
-* 类 名 称 ：CustomerAttribute
+* 类 名 称 ：StringRangeAttribute
 * 类 描 述 ：
 * 所在的域 ：NICHOLAS-LEO
 * 命名空间 ：NicholasLeo.Homework.Commond
 * 机器名称 ：NICHOLAS-LEO 
 * CLR 版本 ：4.0.30319.42000
-* 创建时间 ：2019-10-25 0:27:36
+* 创建时间 ：2019-10-26 0:29:50
 * 修 改 人 : NicholasLeo
-* 更新时间 ：2019-10-25 0:27:36
+* 更新时间 ：2019-10-26 0:29:50
 * 版 本 号 ：v1.0.0.0
 *******************************************************************
 * Copyright @ NicholasLeo 2019. All rights reserved.
@@ -28,11 +28,24 @@ using System.Threading.Tasks;
 
 namespace NicholasLeo.Homework.Commond
 {
-    public class CustomerAttribute : Attribute
+    public class StringRangeAttribute : ValidateAttribute
     {
-        private string _TableName;
-        public string TableName { get { return _TableName; } set { _TableName = value; } }
-        private string _ColumnName;
-        public string ColumnName { get { return _ColumnName; } set { _ColumnName = value; } }
+        public int MinLen { get; set; }
+        public int MaxLen { get; set; }
+        public override string ErrorMessage
+        {
+            get
+            {
+                if (base.ErrorMessage != null)
+                    return base.ErrorMessage;
+                return $"字符串长度范围{this.MinLen}-{this.MaxLen}";
+            }
+            set => base.ErrorMessage = value;
+        }
+
+        public override bool Validate(object value)
+        {
+            return value.ToString().Length >= this.MinLen && value.ToString().Length <= this.MaxLen;
+        }
     }
 }

@@ -20,8 +20,10 @@
 *******************************************************************
 //----------------------------------------------------------------*/
 #endregion
+using NicholasLeo.Homework.Commond;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,10 +32,20 @@ namespace NicholasLeo.Homework.Models
 {
     public abstract class BaseInfoModel : BaseModel
     {
+        [Description("名称")]
+        [CustomerAttribute(ColumnName ="Name")]
         public virtual string Name { get; set; }
+        [Description("创建时间")]
+        [CustomerAttribute(ColumnName = "CreateTime")]
         public virtual DateTime CreateTime { get; set; }
+        [Description("创建人NO")]
+        [CustomerAttribute(ColumnName = "CreatorId")]
         public virtual int CreatorId { get; set; }
+        [Description("修改时间")]
+        [CustomerAttribute(ColumnName = "LastModifierId")]
         public virtual int? LastModifierId { get; set; }
+        [Description("修改人NO")]
+        [CustomerAttribute(ColumnName = "LastModifyTime")]
         public virtual DateTime? LastModifyTime { get; set; }
     }
 }

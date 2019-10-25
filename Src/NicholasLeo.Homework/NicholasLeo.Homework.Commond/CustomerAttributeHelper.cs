@@ -2,7 +2,7 @@
 /*----------------------------------------------------------------
 * 作    者 ：Nicholas Leo 
 *  E-Mail : nicholasleo1030@163.com
-*  GitHub : https://github.com/nicholasleo
+*  GitHub : https://github.com/Nicholasleo/DoNetAdvancedClassHomework
 * 项目名称 ：NicholasLeo.Homework.Commond
 * 项目描述 ：类-
 * 类 名 称 ：CustomerAttributeHelper
@@ -45,6 +45,21 @@ namespace NicholasLeo.Homework.Commond
                 }
             }
             return tableName;
+        }
+
+        public static string GetColumnName(PropertyInfo prop)
+        {
+            string columnName = prop.Name;
+            object[] objAttrs = prop.GetCustomAttributes(typeof(CustomerAttribute), true);
+            if (objAttrs.Length > 0)
+            {
+                CustomerAttribute attr = objAttrs[0] as CustomerAttribute;
+                if (attr != null)
+                {
+                    columnName = attr.ColumnName;
+                }
+            }
+            return columnName;
         }
     }
 }

@@ -2,7 +2,7 @@
 /*----------------------------------------------------------------
 * 作    者 ：Nicholas Leo 
 *  E-Mail : nicholasleo1030@163.com
-*  GitHub : https://github.com/nicholasleo
+*  GitHub : https://github.com/Nicholasleo/DoNetAdvancedClassHomework
 * 项目名称 ：NicholasLeo.Homework.Services
 * 项目描述 ：类-
 * 类 名 称 ：SqlDbContext
@@ -44,10 +44,10 @@ namespace NicholasLeo.Homework.Services
             {
                 Type type = typeof(T);
                 object obj = Activator.CreateInstance(type);
-                string fields = string.Join(",", type.GetProperties().Where(f => !f.Name.Equals("Id")).Select(f => $"[{f.Name}]"));
-                string values = string.Join(",", type.GetProperties().Where(f => !f.Name.Equals("Id")).Select(f => $"@{f.Name}"));
+                string fields = string.Join(",", type.GetProperties().Where(f => !f.Name.Equals("Id")).Select(f => $"[{CustomerAttributeHelper.GetColumnName(f)}]"));
+                string values = string.Join(",", type.GetProperties().Where(f => !f.Name.Equals("Id")).Select(f => $"@{CustomerAttributeHelper.GetColumnName(f)}"));
                 string sql = $"INSERT INTO [{CustomerAttributeHelper.GetTableName(type)}]({fields}) VALUES({values})";
-                var parameters = type.GetProperties().Where(f=>!f.Name.Equals("Id")).Select(item => new SqlParameter($"@{item.Name}",$"{item.GetValue(t)}"));
+                var parameters = type.GetProperties().Where(f=>!f.Name.Equals("Id")).Select(item => new SqlParameter($"@{CustomerAttributeHelper.GetColumnName(item)}",$"{item.GetValue(t)}"));
                 if (_IDbHelper.ExecuteNonQuery(sql, parameters.ToArray()) > 0)
                 {
                     resultMsg.Status = 200;
@@ -69,7 +69,7 @@ namespace NicholasLeo.Homework.Services
             {
                 Type type = typeof(T);
                 object obj = Activator.CreateInstance(type);
-                string sql = $"UPDATE [{CustomerAttributeHelper.GetTableName(type)}]  SET {string.Join(",", type.GetProperties().Where(f => !f.Name.Equals("Id")).Select(f => $"[{f.Name}]=@{f.Name}"))}  WHERE Id =@Id";
+                string sql = $"UPDATE [{CustomerAttributeHelper.GetTableName(type)}]  SET {string.Join(",", type.GetProperties().Where(f => !f.Name.Equals("Id")).Select(f => $"[{CustomerAttributeHelper.GetColumnName(f)}]=@{CustomerAttributeHelper.GetColumnName(f)}"))}  WHERE Id =@Id";
                 var parameters = type.GetProperties().Select(item => new SqlParameter()
                 {
                     ParameterName = $"@{item.Name}",
@@ -138,13 +138,13 @@ namespace NicholasLeo.Homework.Services
             {
                 Type type = typeof(T);
                 object data = Activator.CreateInstance(type); 
-                string sql = $"SELECT {string.Join(",", type.GetProperties().Select(f => $"[{f.Name}]")) } FROM [{CustomerAttributeHelper.GetTableName(type)}] where Id=@Id";
+                string sql = $"SELECT {string.Join(",", type.GetProperties().Select(f => $"[{CustomerAttributeHelper.GetColumnName(f)}]")) } FROM [{CustomerAttributeHelper.GetTableName(type)}] where Id=@Id";
                 SqlDataReader dataReader = _IDbHelper.ExecuteReader(sql, new SqlParameter("@Id", id));
                 if (dataReader.Read())
                 {
                     foreach (var prop in type.GetProperties())
                     {
-                        prop.SetValue(data, dataReader[prop.Name] is DBNull ? null : dataReader[prop.Name]);
+                        prop.SetValue(data, dataReader[CustomerAttributeHelper.GetColumnName(prop)] is DBNull ? null : dataReader[CustomerAttributeHelper.GetColumnName(prop)]);
                     }
                     return (T)data;
                 }
@@ -165,14 +165,14 @@ namespace NicholasLeo.Homework.Services
             {
                 List<T> result = new List<T>();
                 Type type = typeof(T);
-                string sql = $"SELECT {string.Join(",", type.GetProperties().Select(a => $"[{a.Name}]")) } FROM [{CustomerAttributeHelper.GetTableName(type)}]";
+                string sql = $"SELECT {string.Join(",", type.GetProperties().Select(a => $"[{CustomerAttributeHelper.GetColumnName(a)}]")) } FROM [{CustomerAttributeHelper.GetTableName(type)}]";
                 SqlDataReader dataReader = _IDbHelper.ExecuteReader(sql);
                 while (dataReader.Read())
                 {
                     object data = Activator.CreateInstance(type); 
                     foreach (var prop in type.GetProperties())
                     {
-                        prop.SetValue(data, dataReader[prop.Name] is DBNull ? null : dataReader[prop.Name]);
+                        prop.SetValue(data, dataReader[CustomerAttributeHelper.GetColumnName(prop)] is DBNull ? null : dataReader[CustomerAttributeHelper.GetColumnName(prop)]);
                     }
                     result.Add((T)data);
                 }

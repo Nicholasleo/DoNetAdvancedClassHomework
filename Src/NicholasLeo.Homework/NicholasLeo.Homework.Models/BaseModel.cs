@@ -2,7 +2,7 @@
 /*----------------------------------------------------------------
 * 作    者 ：Nicholas Leo 
 *  E-Mail : nicholasleo1030@163.com
-*  GitHub : https://github.com/nicholasleo
+*  GitHub : zz
 * 项目名称 ：NicholasLeo.Homework.Models
 * 项目描述 ：类-
 * 类 名 称 ：BaseModel

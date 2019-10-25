@@ -2,7 +2,7 @@
 /*----------------------------------------------------------------
 * 作    者 ：Nicholas Leo 
 *  E-Mail : nicholasleo1030@163.com
-*  GitHub : https://github.com/nicholasleo
+*  GitHub : https://github.com/Nicholasleo/DoNetAdvancedClassHomework
 * 项目名称 ：NicholasLeo.Homework.Interfaces
 * 项目描述 ：接口-
 * 类 名 称 ：IDbContext

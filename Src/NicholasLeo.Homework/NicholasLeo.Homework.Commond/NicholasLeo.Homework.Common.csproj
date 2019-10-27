@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CacheHelper.cs" />
     <Compile Include="CustomerAttribute.cs" />
     <Compile Include="CustomerAttributeHelper.cs" />
     <Compile Include="DisplayModelsInfo.cs" />

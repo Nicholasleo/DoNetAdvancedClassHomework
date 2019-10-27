@@ -33,6 +33,10 @@ namespace NicholasLeo.Homework.Commond
     {
         public static string GetTableName(Type type)
         {
+            if (CacheHelper.IsExsits(type.Name))
+            {
+                return CacheHelper.Get<string>(type.Name);
+            }
             string tableName = string.Empty;
             object[] objAttrs = type.GetCustomAttributes(typeof(CustomerAttribute), true);
             foreach (var item in objAttrs)
@@ -44,12 +48,15 @@ namespace NicholasLeo.Homework.Commond
                     break;
                 }
             }
+            CacheHelper.Add(type.Name, tableName);
             return tableName;
         }
 
         public static string GetColumnName(PropertyInfo prop)
         {
             string columnName = prop.Name;
+            if (CacheHelper.IsExsits(prop.Name))
+                return CacheHelper.Get<string>(prop.Name);
             object[] objAttrs = prop.GetCustomAttributes(typeof(CustomerAttribute), true);
             if (objAttrs.Length > 0)
             {
@@ -59,6 +66,7 @@ namespace NicholasLeo.Homework.Commond
                     columnName = attr.ColumnName;
                 }
             }
+            CacheHelper.Add(prop.Name, columnName);
             return columnName;
         }
     }
